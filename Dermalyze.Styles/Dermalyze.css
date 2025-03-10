@@ -26,6 +26,7 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    width: 100%;
 }
 
 .drop-area {
@@ -91,4 +92,13 @@
     }
 }
 
-@media only screen and (max-width: 500px) {}
+@media only screen and (max-width: 500px) {
+    .drop-area {
+        position: relative;
+        height: 200px;
+        width: 90%;
+        border: 7px dashed gray;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+}
