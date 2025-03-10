@@ -1,4 +1,4 @@
-Title: Automated Skin Cancer Detection Using Dermoscopic Images
+Title: Automated Skin Cancer Detection Using Dermoscopic Images<br>
 Description:
 	This project focuses on developing a deep learning model for automated skin 
 	cancer detection using dermoscopic images. By utilizing large, publicly 
