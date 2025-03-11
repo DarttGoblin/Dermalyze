@@ -114,7 +114,7 @@
 
 option {
     background-color: black;
-    color: white;
+    color: rgb(190, 130, 130);
 }
 
 .result-container { 
@@ -137,10 +137,6 @@ option {
 @media only screen and (max-width: 500px) {
     .drop-area {
         width: 90%;
-    }
-
-    .input-container {
-        gap: 20px;
     }
 
     .selects-container {
