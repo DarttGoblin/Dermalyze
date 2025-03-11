@@ -4,6 +4,7 @@ const gender_select = document.querySelector('.gender-select');
 const age_select = document.querySelector('.age-select');
 const region_select = document.querySelector('.region-select');
 const result_container = document.querySelector('.result-container');
+const preview = document.querySelector('.preview');
 
 const age_range = [10, 90];
 const gender_option = ['Male', 'Female'];
@@ -22,7 +23,9 @@ function UploadImage() {
             console.log("File Size:", file.size, "bytes");
     
             let reader = new FileReader();
-            reader.onload = () => console.log("File Content (Base64):", reader.result);
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+            };
             reader.readAsDataURL(file);
         }
     };

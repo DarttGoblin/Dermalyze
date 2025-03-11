@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 20px;
+    gap: 10px;
     margin-top: 200px;
 }
 
@@ -17,7 +17,7 @@
 .dermalyze-description {
     font-size: 20px;
     color: rgb(160, 160, 160);
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .input-container {
@@ -31,7 +31,7 @@
 
 .drop-area {
     position: relative;
-    height: 200px;
+    height: 100px;
     width: 500px;
     border: 7px dashed gray;
     border-radius: 30px;
@@ -99,6 +99,7 @@
     font-size: 20px;
     font-weight: 500;
     padding: 10px;
+    width: 200px;
     border: none;
     border-bottom: 3px solid var(--primary-dark-hover);
     transition: border var(--primary-transition);
@@ -116,23 +117,42 @@ option {
     color: white;
 }
 
+.result-container { 
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    margin-top: 20px;
+}
+
+.preview {
+    width: 400px;
+}
+
 @media only screen and (max-width: 800px) {
-    .dermalyze-section {
+    .dermalyze-section, .result-container {
         width: 90%;
     }
 }
 
 @media only screen and (max-width: 500px) {
     .drop-area {
-        position: relative;
-        height: 200px;
         width: 90%;
-        border: 7px dashed gray;
-        border-radius: 30px;
-        cursor: pointer;
+    }
+
+    .input-container {
+        gap: 20px;
     }
 
     .selects-container {
         gap: 5px;
+    }
+
+    .dermalyze-select {
+        width: 150px;
+        font-size: 15px;
+    }
+
+    .preview {
+        width: 100%;
     }
 }
