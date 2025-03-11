@@ -46,11 +46,7 @@ function TakeImage() {
         if (file) {
             const reader = new FileReader();
             reader.onload = (e) => {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.style.width = '200px';
-                img.style.height = '200px';
-                document.body.appendChild(img);
+                preview.src = e.target.result;
             };
             reader.readAsDataURL(file);
         }
