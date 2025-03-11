@@ -86,6 +86,36 @@
     border: 2px solid var(--primary-gray);
 }
 
+.selects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.dermalyze-select {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+    border: none;
+    border-bottom: 3px solid var(--primary-dark-hover);
+    transition: border var(--primary-transition);
+    cursor: pointer;
+    background: none;
+    outline: none;
+}
+
+.dermalyze-select:hover {
+    border-bottom: 3px solid var(--primary-color);
+}
+
+option {
+    background-color: black;
+    color: white;
+}
+
 @media only screen and (max-width: 800px) {
     .dermalyze-section {
         width: 90%;
@@ -100,5 +130,9 @@
         border: 7px dashed gray;
         border-radius: 30px;
         cursor: pointer;
+    }
+
+    .selects-container {
+        gap: 5px;
     }
 }
