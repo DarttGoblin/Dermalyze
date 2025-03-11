@@ -1,7 +1,0 @@
-Task: Incorporate metadata with image processing.
-Uniqueness: Most models focus only on images, but incorporating metadata can provide additional context and improve performance.
-Challenges: Ensuring the model doesn’t overfit to metadata and generalizes well across diverse populations.
-
-Idea: Detection of rare skin cancer.
-Uniqueness: Rare skin cancers are understudied due to limited labeled data, but self-supervised learning can help overcome this.
-Challenges: Designing an effective self-supervised task for skin images.
