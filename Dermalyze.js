@@ -40,7 +40,7 @@ function SendToModel(inputs) {
 
         else {
             console.error('Error:', error);
-            alert('There was an error processing your text! Please try again.');
+            alert('There was an error processing your information! Please try again.');
         }
     })
     .catch(err => {
