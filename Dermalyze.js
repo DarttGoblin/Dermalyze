@@ -17,22 +17,25 @@ TakeImage();
 
 analyse_skin.onclick = function() {
     if (CheckValidInput()) {
-        SendToModel();
+        const inputs = [age_select.value, gender_select.value, region_select.value, preview];
+        console.log(inputs);
+        console.log('Sending to model...');
+        // SendToModel(inputs);
     } else {
         alert('Something is missing...');
     }
 }
 
-function SendToModel() {
+function SendToModel(inputs) {
     fetch('http://localhost:3000', {
         method: 'POST',
         headers: {'Content-Type': 'application/json',},
-        body: JSON.stringify({ text }),
+        body: JSON.stringify({ inputs }),
     })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            console.log()
+            console.log('success!');
         }
 
         else {
