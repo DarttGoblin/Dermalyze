@@ -162,4 +162,12 @@ option {
     .preview {
         width: 100%;
     }
+
+    .dermalyze-title {
+        font-size: 30px;
+    }
+
+    .dermalyze-description {
+        font-size: 18px;
+    }
 }
