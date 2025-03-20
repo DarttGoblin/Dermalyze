@@ -20,8 +20,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 230px;
-    margin: 30px 0px 50px 100px;
+    gap: 200px;
+    margin: 30px 30px 50px 80px;
 }
 
 .lets-talk-container {
@@ -192,6 +192,7 @@ footer {
     .footer-body {
         display: flex;
         flex-direction: column;
+        margin: 30px 30px 50px 30px;
         gap: 50px;
     }
 }
