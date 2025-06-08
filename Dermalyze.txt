@@ -32,5 +32,16 @@ Ideas:
 
 -----------------------------------------------------------------------------------------
 
+Pipeline:
+	Data Collection
+	Data Augmentation
+	Model Choice
+	Model Fine Tunning
+
+-----------------------------------------------------------------------------------------
+
 Sources:
 	https://api.isic-archive.com/collections/249/?page=1
+	https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000?resource=download
+
+-----------------------------------------------------------------------------------------

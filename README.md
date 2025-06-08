@@ -1,14 +1,4 @@
 Title: Automated Skin Cancer Detection Using Dermoscopic Images. 🔬<br><br>
-Description:
-	This project focuses on developing a deep learning model for automated skin 
-	cancer detection using dermoscopic images. By utilizing large, publicly 
-	available datasets like the ISIC Archive and HAM10000, the model will 
-	classify skin lesions into categories such as melanoma, basal cell 
-	carcinoma, and benign lesions. Advanced deep learning techniques, 
-	including transfer learning, data augmentation, and ensemble learning, 
-	will be employed to enhance accuracy and generalization. The final solution 
-	will be integrated into a user-friendly web interface, allowing users 
-	to upload images and receive diagnostic predictions. This tool aims to 
-	support dermatologists in making faster and more accurate assessments, 
-	particularly in resource-limited settings, ultimately contributing to 
-	early detection and improved patient outcomes.
+Description:<br>
+Dermalyze is an intelligent, deep learning-based system designed to assist in the early detection of skin cancer through image analysis. By combining a convolutional neural network with patient metadata—including age, sex, and lesion localization—Dermalyze performs multi-class classification of skin lesions into categories such as melanoma, basal cell carcinoma, and actinic keratoses.
+Users can upload a dermoscopic image via a web interface, enter relevant patient details, and receive a real-time prediction along with confidence scores. The backend model is built using TensorFlow and served through a Flask API, while the frontend offers a clean, user-friendly interface. Dermalyze aims to support dermatologists and general practitioners by improving diagnostic accuracy, especially in resource-limited or remote settings.

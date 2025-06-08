@@ -129,14 +129,27 @@ option {
 }
 
 .result-container { 
-    display: flex;
+    display: none;
+    flex-direction: column;
     justify-content: center;
+    gap: 10px;
     width: 800px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .preview {
     width: 300px;
+    margin-top: 30px;
+}
+
+.prediction-span, .confidence-span {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(73, 240, 123);
+}
+
+.prediction-value, .confidence-value {
+    color: white;
 }
 
 @media only screen and (max-width: 800px) {
@@ -169,5 +182,11 @@ option {
 
     .dermalyze-description {
         font-size: 18px;
+    }
+
+    .dermalyze-btns-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 }
