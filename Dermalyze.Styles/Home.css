@@ -36,7 +36,14 @@
     margin-bottom: 30px;
 }
 
-.header-analyse-button {
+.home-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-buttons {
     width: fit-content;
     padding: 15px 30px;
     color: white;
@@ -48,11 +55,22 @@
     background-color: var(--primary-color);
     transition: background-color var(--primary-transition), border var(--primary-transition);
     border: 2px solid var(--primary-color);
+    outline: none;
 }
 
-.header-analyse-button:hover {
+.home-buttons:hover {
     background-color: var(--primary-hover);
     border: 2px solid var(--primary-hover);
+}
+
+.github, .demo {
+    background: none;
+    color: var(--primary-color);
+    transition: color var(--primary-transition), background-color var(--primary-transition), border var(--primary-transition);
+}
+
+.github:hover, .demo:hover {
+    color: white;
 }
 
 .header-picture-container {
@@ -201,6 +219,11 @@
 
     .home-image-description {
         width: 90%;
+    }
+
+    .home-buttons-container {
+        display: flex;
+        flex-direction: column;
     }
 }
 
