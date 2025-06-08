@@ -71,7 +71,7 @@ function SendToModel(age, gender, region, preview) {
             })
             .catch(err => {
                 console.error('Error:', err);
-                alert('There was an error with the server! Please try again.');
+                alert('The model is not hosted yet, will be soon, check demo for the moment, to see how things are going!');
                 analyse_skin.textContent = 'Analyse';
             });
         });
