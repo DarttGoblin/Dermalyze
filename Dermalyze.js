@@ -9,9 +9,10 @@ const preview = document.querySelector('.preview');
 const prediction_value = document.querySelector('.prediction-value');
 const confidence_value = document.querySelector('.confidence-value');
 
-const age_range = [10, 90];
+const age_range = [5, 85];
 const gender_option = ['Male', 'Female'];
-const region_option = ['Head/Neck', 'Upper Limb', 'Lower Limb', 'Torso', 'Palm/Sole', 'Nail', 'Genital Area', 'Unknown/Other'];
+const region_option = ['back', 'lower extremity', 'trunk', 'upper extremity', 'abdomen', 'face', 
+                       'chest', 'foot', 'neck', 'scalp', 'hand', 'ear', 'genital', 'acral'];
 const cancer_labels = ['Melanoma', 'Basal Cell Carcinoma', 'Actinic Keratoses'];
 
 GenerateOptions();
@@ -34,7 +35,6 @@ analyse_skin.onclick = function() {
 function SendToModel(age, gender, region, preview) {
     const formData = new FormData();
 
-    // Convert base64 preview back to a Blob
     fetch(preview.src)
         .then(res => res.blob())
         .then(blob => {
@@ -43,7 +43,7 @@ function SendToModel(age, gender, region, preview) {
             formData.append("image", file);
             formData.append("age", age);
             formData.append("sex", gender.toLowerCase());
-            formData.append("localization", mapRegion(region));
+            formData.append("localization", region);
 
             fetch('http://localhost:5000/predict', {
                 method: 'POST',
@@ -51,22 +51,22 @@ function SendToModel(age, gender, region, preview) {
             })
             .then(response => response.json())
             .then(data => {
-                if (data.prediction) {
-                    let prediction_result = data.prediction;
-                    let confidence_result = data.confidence;
-                    const label_map = {
-                        'mel': cancer_labels[0],
-                        'bcc': cancer_labels[1],
-                        'others': cancer_labels[2]
-                    };
-                    prediction_result = label_map[prediction_result] || cancer_labels[2];
-                    result_container.style.display = 'flex';
-                    prediction_value.textContent = prediction_result;
-                    confidence_value.textContent = (confidence_result * 100).toFixed(2) + '%';
-                    analyse_skin.textContent = 'Analyse';
+                analyse_skin.textContent = 'Analyse';
+
+                if ('abnormal' in data && 'prediction' in data && 'confidence' in data) {
+                    if (data.abnormal === false) {
+                        let confidencePercent = 100 - (data.confidence * 100).toFixed(2) + '%';
+                        prediction_value.textContent = 'Not Cancer';
+                        confidence_value.textContent = confidencePercent;
+                        result_container.style.display = 'flex';
+                    } else {
+                        let confidencePercent = (data.confidence * 100).toFixed(2) + '%';
+                        prediction_value.textContent = 'Cancer Type: ' + data.prediction;
+                        confidence_value.textContent = confidencePercent;
+                        result_container.style.display = 'flex';
+                    }
                 } else {
-                    console.error('Unexpected response:', data);
-                    analyse_skin.textContent = 'Analyse';
+                    console.error('Unexpected response structure:', data);
                 }
             })
             .catch(err => {
@@ -156,18 +156,4 @@ function CheckValidInput() {
         region_select.value != '' &&
         preview.src != ''
     ) { return true;} else {return false;}
-}
-
-function mapRegion(region) {
-    const map = {
-        'Head/Neck': 'face',
-        'Upper Limb': 'upper extremity',
-        'Lower Limb': 'lower extremity',
-        'Torso': 'trunk',
-        'Palm/Sole': 'hand',
-        'Nail': 'unknown',
-        'Genital Area': 'unknown',
-        'Unknown/Other': 'unknown'
-    };
-    return map[region] || 'unknown';
 }
