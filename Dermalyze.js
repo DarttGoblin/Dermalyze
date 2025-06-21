@@ -21,16 +21,17 @@ UploadImage();
 TakeImage();
 
 analyse_skin.onclick = function() {
-    if (CheckValidInput()) {
-        const age = age_select.value;
-        const gender = gender_select.value;
-        const region = region_select.value;
-        const imgPreview = preview;
-        analyse_skin.textContent = 'Analysing...';
-        SendToModel(age, gender, region, imgPreview);
-    } else {
-        alert('Something is missing...');
-    }
+    alert('The model is not hosted yet, will be soon, check demo for the moment, to see how things are going!');
+    // if (CheckValidInput()) {
+    //     const age = age_select.value;
+    //     const gender = gender_select.value;
+    //     const region = region_select.value;
+    //     const imgPreview = preview;
+    //     analyse_skin.textContent = 'Analysing...';
+    //     SendToModel(age, gender, region, imgPreview);
+    // } else {
+    //     alert('Something is missing...');
+    // }
 }
 
 function SendToModel(age, gender, region, preview) {
