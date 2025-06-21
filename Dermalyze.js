@@ -8,6 +8,7 @@ const result_container = document.querySelector('.result-container');
 const preview = document.querySelector('.preview');
 const prediction_value = document.querySelector('.prediction-value');
 const confidence_value = document.querySelector('.confidence-value');
+const home_buttons_container = document.querySelector('.home-buttons-container');
 
 const age_range = [5, 85];
 const gender_option = ['Male', 'Female'];
@@ -73,6 +74,7 @@ function SendToModel(age, gender, region, preview) {
                 console.error('Error:', err);
                 alert('The model is not hosted yet, will be soon, check demo for the moment, to see how things are going!');
                 analyse_skin.textContent = 'Analyse';
+                document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 }
