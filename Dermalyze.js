@@ -22,6 +22,7 @@ TakeImage();
 
 analyse_skin.onclick = function() {
     alert('The model is not hosted yet, will be soon, check demo for the moment, to see how things are going!');
+    document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
     // if (CheckValidInput()) {
     //     const age = age_select.value;
     //     const gender = gender_select.value;
